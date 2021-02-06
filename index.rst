@@ -80,15 +80,15 @@ AreaName
 
 The name of the area in the player's localized language. In English, those are:
 
- - ERIBU
- - ABSU
- - ZI
- - KUR
- - INDI
- - EDIN
- - UKKIN-NA
- - E-KUR-MAH
- - MAR-URU
+ - ``ERIBU``
+ - ``ABSU``
+ - ``ZI``
+ - ``KUR``
+ - ``INDI``
+ - ``EDIN``
+ - ``UKKIN-NA``
+ - ``E-KUR-MAH``
+ - ``MAR-URU``
 
 AreaItemPercent
 ---------------
