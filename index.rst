@@ -25,7 +25,7 @@ For your convenience in creating your client application, we are providing an :d
 Reference Implementation
 ========================
 
-VGR has provided a :download:`small reference implementation of the API </_static/AxiomVergeItemTracker-v1.0.zip>`, allowing you to locally run a web-based tracking widget. It maintains feature parity with the former widget used by the mod.
+VGR has provided a :download:`reference implementation of the API </_static/AxiomVergeItemTracker-v1.0.zip>`, allowing you to locally run a web-based tracking widget. It maintains feature parity with the former widget used by the mod.
 
 Data Structure
 ==============
