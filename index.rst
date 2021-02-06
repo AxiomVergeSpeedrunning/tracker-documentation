@@ -79,7 +79,7 @@ A list of all the items the player has collected, excluding:
  - Size nodes
  - Notes
 
-
+Field documentation for the item object is in the section :ref:`Item Object Structure`.
 
 AreaName
 --------
