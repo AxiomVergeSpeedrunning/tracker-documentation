@@ -71,13 +71,7 @@ The structure is fairly self-explanatory, but every field will be documented ind
 Items
 -----
 
-A list of all the items the player has collected, excluding:
-
- - Health/Power nodes
- - Health/Power node fragments
- - Range nodes
- - Size nodes
- - Notes
+A list of all the items the player has collected.
 
 Field documentation for the item object is in the section :ref:`Item Object Structure`.
 
