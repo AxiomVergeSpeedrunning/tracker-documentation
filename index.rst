@@ -22,12 +22,72 @@ Asset Pack
 
 For your convenience in creating your client application, we are providing an :download:`assets pack </_static/assets.zip>` with the file names properly reflecting the ones returned in the data structure.
 
-Reference Implementation
-========================
+Widgets
+=======
 
-VGR has provided a :download:`reference implementation of the API </_static/AxiomVergeItemTracker-v1.0.zip>`, allowing you to locally run a web-based tracking widget. It maintains feature parity with the former widget used by the mod.
+VGR has provided a :download:`reference implementation of the API in </_static/widgets.zip>`, allowing you to locally run some web-based tracking widgets. It maintains feature parity with the former widgets used by the mod and adds a lot more functionality.
 
 The font is available for download :download:`here </_static/joystix.zip>`
+
+Full Map
+--------
+
+This shows the entirety of Sudra in one massive page, detailing what checks are available. Green means that the player can get those checks with their current progression logic, yellow means it is available if they know more advanced progression logic, and red means we have no known way to acquire that item with your current loadout.
+
+.. image:: /_static/images/full_map.png
+
+.. code::
+
+   width: 1403
+   height: 1284
+
+Minimap
+-------
+
+This is a much smaller version of the full map that only displays the current area. The same coloring rules apply.
+
+.. image:: /_static/images/minimap.png
+
+.. code::
+
+   width: 704
+   height: 704
+
+Item Tracker
+------------
+
+A panel that shows all of the items and upgrades you have collected, updated in real time.
+
+.. image:: /_static/images/item_tracker.png
+
+.. code::
+
+   width: 424
+   height: 180
+
+Stats Tracker
+-------------
+
+A list of textual stats about the player's run progress.
+
+.. image:: /_static/images/stats_tracker.png
+
+.. code::
+
+   width: 424
+   height: 212
+
+Spoiler Map
+-----------
+
+Much like the full map, but shows what items are in each location.
+
+.. image:: /_static/images/spoiler_map.png
+
+.. code::
+
+   width: 1403
+   height: 1284
 
 Data Structure
 ==============
@@ -48,6 +108,7 @@ The structure is fairly self-explanatory, but every field will be documented ind
          "mExcludedFromCount": false,
          "mRequiredItem": null
        },
+
        {
        "mName": "FatBeam",
        "mType": 11,
@@ -56,6 +117,56 @@ The structure is fairly self-explanatory, but every field will be documented ind
        "mRequiredItem": null
        }
      ],
+
+     "CurrentPowers": 0,
+     "AcquiredPowers": [
+       "None"
+     ],
+
+     "LocationsData": [
+       {
+         "Area": "Eribu",
+         "Name": "Room2",
+         "VanillaItemName": "DataDisruptor",
+         "RequiredPowers": [
+           0
+         ],
+         "RequiredPowersAdvanced": [],
+         "RequiredPowersMasochist": [],
+         "RequiredPowersString": [
+           ["None"]
+         ],
+         "RequiredPowersStringAdvance": [],
+         "RequiredPowersStringMasochist": [],
+         "LocationId": 1
+       },
+
+       {
+         "Area": "Eribu",
+         "Name": "Room10",
+         "VanillaItemName": "Nova",
+         "RequiredPowers": [
+           1
+         ],
+         "RequiredPowersAdvanced": [
+           4
+         ],
+         "RequiredPowersMasochist": [
+           512
+         ],
+         "RequiredPowersString": [
+           ["Gun"]
+         ],
+         "RequiredPowersStringAdvance": [
+           ["Drill"]
+         ],
+         "RequiredPowersStringMasochist": [
+           ["Grapple"]
+         ],
+         "LocationId": 2
+       },
+     ],
+
      "AreaName": "ERIBU",
      "CurrentHP": 134,
      "MaxHP": 200,
@@ -81,6 +192,23 @@ Items
 A list of all the items the player has collected.
 
 Field documentation for the item object is in the section :ref:`Item Object Structure`.
+
+CurrentPowers
+-------------
+
+A bitmask field of all of the abilities the player has, based on items they have collected.
+
+AcquiredPowers
+--------------
+
+A list of all of the powers the player has acquired by name. This is the string equivalent of the bitmask field above.
+
+LocationsData
+-------------
+
+A map of all of the item locations, with the requirements to get them (based on progression difficulty) included.
+
+Field documentation for the location object is in the section :ref:`Location Object Structure`.
 
 AreaName
 --------
@@ -218,3 +346,18 @@ mRequireditem
 -------------
 
 Currently unused and will be removed at a later date.
+
+Location Object Structure
+=========================
+
+The LocationsData structure is built for creating a real time map for what checks are available.
+
+Area
+----
+
+The name of the in-game area that this item is located in. ``Eribu``, ``Absu``, ``Kur``, etc.
+
+Name
+----
+
+The name of the room
