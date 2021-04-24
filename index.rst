@@ -360,4 +360,44 @@ The name of the in-game area that this item is located in. ``Eribu``, ``Absu``, 
 Name
 ----
 
-The name of the room
+The internal name of the room.
+
+VanillaItemName
+---------------
+
+The internal name of the item normally in this spot.
+
+RequiredPowers
+--------------
+
+An array of bitmasks. If the player's ``CurrentPowers`` includes any one of these bitmasks, they can collect the item under default progression logic.
+
+RequiredPowersAdvanced
+----------------------
+
+An array of bitmasks. If the player's ``CurrentPowers`` includes any one of these bitmasks, they can collect the item under advanced progression logic.
+
+RequiredPowersMasochist
+-----------------------
+
+An array of bitmasks. If the player's ``CurrentPowers`` includes any one of these bitmasks, they can collect the item under masochist progression logic.
+
+RequiredPowersString
+--------------------
+
+The string equivalent of the ``RequiredPowers`` array. An array of arrays of strings. If every item of one of the arrays is present in the player's ``AcquiredPowers``, they can collect the item under default progression logic.
+
+RequiredPowersStringAdvanced
+----------------------------
+
+The string equivalent of the ``RequiredPowersAdvanced`` array. An array of arrays of strings. If every item of one of the arrays is present in the player's ``AcquiredPowers``, they can collect the item under advanced progression logic.
+
+RequiredPowersStringMasochist
+-----------------------------
+
+The string equivalent of the ``RequiredPowersAdvanced`` array. An array of arrays of strings. If every item of one of the arrays is present in the player's ``AcquiredPowers``, they can collect the item under masochist progression logic.
+
+LocationId
+----------
+
+Used internally for logic generation, likely not useful for the user.
