@@ -329,6 +329,11 @@ SplitsNames
 
 list collection of split names.
 
+PersonalBest
+--------------
+
+personal best time as double.
+
 Item Object Structure
 =====================
 
