@@ -309,6 +309,26 @@ The number of breakable blocks (that are not bubbles) that the player has destro
 
 This does not update in real time, to avoid flooding the client with events.
 
+Difficulty
+--------------
+
+enumerator value for difficulty state 0 = Normal, 1 = Hard.
+
+Progression
+--------------
+
+enumerator value for randomizer progression state 0 = Default, 1 = Advanced, 2 = Masochist.
+
+Splits
+--------------
+
+dictionary collection of names as string, and split times as double.
+
+SplitsNames
+--------------
+
+list collection of split names.
+
 Item Object Structure
 =====================
 
